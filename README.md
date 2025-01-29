@@ -471,7 +471,7 @@ The process generates two main artifacts for forensic analysis (usually in /var/
    - Optional: Skip Evidence Item Information
    - Optional: Set fragment size (0 for no fragmentation)
 
-![FTK Export Settings](images/imagesetup/FTK4.png)
+![FTK Export Settings](images/imageSetup/FTK4.png)
 
 ### Analysis with Magnet AXIOM
 
