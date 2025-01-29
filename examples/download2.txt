@@ -1,0 +1,10 @@
+https://www.pythonforbeginners.com/wp-content/uploads/2020/02/python-programming.jpg
+https://www.kaggle.com/c/titanic/download
+https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg
+https://www.datacamp.com/courses/intro-to-python-for-data-science
+https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4
+https://github.com/microsoft/ML-For-Beginners/archive/refs/heads/main.zip
+https://upload.wikimedia.org/wikipedia/commons/3/3d/LARGE_elevation.jpg
+https://sample-videos.com/video123/mp4/720/nature_720p_1mb.mp4
+https://github.com/tensorflow/tensorflow/archive/refs/heads/master.zip
+https://cdn.pixabay.com/photo/2015/06/19/21/24/avenue-815297_1280.jpg

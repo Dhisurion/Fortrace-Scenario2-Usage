@@ -1,0 +1,66 @@
+name: Student Research Scenario Level 2
+description: Configuration file for the Student Research Scenario - Medium Difficulty
+author: Mueller, Pascal
+collections:
+  c-http-0:
+    type: http
+    urls: "examples/Windows/ForTrace_Workshop/VeraCrypt_Edge/browse3.txt"
+  c-http-1:
+    type: http
+    urls: "examples/Windows/ForTrace_Workshop/VeraCrypt_Edge/download3.txt"
+  c-web-search:
+    type: http
+    terms: "examples/Windows/ForTrace_Workshop/VeraCrypt_Edge/search3.txt"
+root: /var/tmp/ForTrace_scenario_2_level2
+overwrite_root: True
+domain:
+  username: "fortrace"
+  password: "fortrace"
+  name: "win10"
+  network: "default"
+  os_type: OSType.WINDOWS
+  desktop_env: DesktopEnvironment.Windows_10
+  start_sniffer: True
+  snapshot: "veracrypt"
+  dump_images: True
+veracrypt:
+  container_hidden: False
+  container_path: 'C:\Users\fortrace\Desktop\container'
+  container_history: False
+  container_encryption: "AES"
+  container_hash: "SHA-512"
+  container_size_mb: 512
+  container_password: "Very5ecureP*sswordN00neW1llG@t"
+  container_filesystem: "FAT"
+  mouse_movement_seed: 1234
+  mouse_movement_time_s: 5
+  container_mount_point: "A"
+generator:
+  action_delta_minimum: 5
+  action_delta_maximum: 10
+  seed: 1234
+  actions:
+    web_browsing:
+      application: "Microsoft Edge"
+      operations:
+        - name: "browsing"
+          amount: 10
+          source: c-http-0
+          source_unique: True
+          enable_scraping: True
+        - name: "download"
+          amount: 8
+          source: c-http-1
+          source_unique: True
+        - name: "web_search"
+          amount: 10
+          source: c-web-search
+          source_unique: True
+          enable_scraping: False
+    file_management:
+      application: "File Explorer"
+      operations:
+        - name: "move"
+          amount: 1
+          source: web_browsing
+          destination: 'A:'
