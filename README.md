@@ -404,13 +404,13 @@ This scenario simulates a Computer Science student searching for AI and Machine 
 
 **Research Question:**
 "Conduct a forensic analysis of the student's research activities by examining:
-Search pattern analysis:
+- Search pattern analysis:
    - Search terms used
    - Temporal sequence of searches
-Web activity investigation:
+- Web activity investigation:
    - URLs visited
    - Access timestamps
-Container forensics:
+- Container forensics:
    -Container location and creation timestamp
    - Password recovery
    - Content analysis of stored files
@@ -450,15 +450,15 @@ This scenario simulates a Business Administration student conducting research fo
 
 **Research Question:**
 "Conduct a content-based forensic analysis focusing on:
-Research topic identification:
+- Research topic identification:
    - Main subject areas
    - Sub-topics and related fields
    - Search term patterns and frequencies
-Pattern analysis:
+- Pattern analysis:
    - Topic clustering
    - Evolution of research focus over time
    - Correlations between searched topics
-Thesis topic determination:
+- Thesis topic determination:
    - Primary research direction
    - Supporting evidence from search patterns
    - Academic resource utilization
