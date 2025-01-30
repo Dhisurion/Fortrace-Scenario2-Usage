@@ -42,6 +42,9 @@ sudo apt full-upgrade -y
 
 ## ForTrace Installation
 
+This ForTrace installation guide utilizes PyCharm, as this IDE offers a particularly user-friendly setup process.
+While Dennis W0lf describes alternative installation methods(here: https://gitlab.com/DW0lf/fortrace/-/tree/main), such as for Visual Studio Code, PyCharm is recommended here due to its intuitive interface and simplified configuration.
+
 1. Clone the repository:
 ```bash
 git clone https://gitlab.com/DW0lf/fortrace.git
@@ -100,6 +103,10 @@ virt-manager
 [Pycharm Config: Set source](images/Installation/Installation-src.png)
 
 Note: If you encounter "files not found" errors, try marking the entire fortrace directory as sources root.
+
+
+The preceding section detailed the complete setup process for Fortrace++, encompassing both the installation of required dependencies and PyCharm configuration. 
+The following section will guide you through setting up the Virtual Machine environment using virt-manager.
 
 ## Virtual Machine Setup
 
@@ -206,6 +213,12 @@ NOTE: You might have to convert the .iso into a .qcow2 image using this command:
 ![VM Snapshot Creation](images/Installation/snapshot-creation.png)
 
 > **Note**: Both the VM name and snapshot name are crucial for scenario execution.
+
+
+This section provides comprehensive guidance on the Virtual Machine installation process - from initial setup through to completion. 
+With all installation steps completed, the environment is now ready for configuration.
+The following section presents a detailed Configuration Tutorial, which will walk through the structure of .yaml files and explain the purpose of each keyword. 
+Additionally, it will demonstrate how to create and configure custom scenarios.
 
 # Scenario Configuration Guide
 
@@ -374,6 +387,12 @@ After finishing all the in the yaml specified actions, the automatism will creat
 
 ## Example Scenarios
 
+This section presents an overview of custom-developed scenarios, each accompanied by a narrative description, key features, and associated research questions suitable for educational applications. For each scenario, you'll find:
+
+- A brief storyline providing context
+- Essential characteristics and components
+- Educational research questions to explore
+
 ### Scenario 1: CS Student Research
 This scenario simulates a Computer Science student searching for AI and Machine Learning resources for a college assignment.
 
@@ -382,6 +401,23 @@ This scenario simulates a Computer Science student searching for AI and Machine 
 - Limited number of browsed links
 - Focused search patterns around academic AI/ML resources
 - Basic container usage for storing research materials
+
+**Research Question:**
+"Conduct a forensic analysis of the student's research activities by examining:
+Search pattern analysis:
+   - Search terms used
+   - Temporal sequence of searches
+Web activity investigation:
+   - URLs visited
+   - Access timestamps
+Container forensics:
+   -Container location and creation timestamp
+   - Password recovery
+   - Content analysis of stored files
+
+
+
+Use timeline analysis to reconstruct the sequence of research activities and container usage."
 
 ### Scenario 2: Extended Research with Noise
 Building upon Scenario 1, this version introduces additional behavioral patterns to create a more realistic user profile.
@@ -395,8 +431,11 @@ Building upon Scenario 1, this version introduces additional behavioral patterns
 - More varied search patterns
 - Random timing between actions
 
+**Research Question:**
+"To what extent can behavioral noise (entertainment, social media, political content) mask or alter the detectability of specific research patterns in digital forensic analysis, and how does this impact the reliability of user profiling?(compared to scenario 1)"
+
 ### Scenario 3: Bachelor Thesis Research
-This scenario simulates a Business Administration student conducting research for a bachelor's thesis on "Sustainable Supply Chain Management".
+This scenario simulates a Business Administration student conducting research for a bachelor's thesis.
 
 **Key Characteristics:**
 - Most complex scenario with extensive data generation
@@ -409,9 +448,30 @@ This scenario simulates a Business Administration student conducting research fo
 - Extended session duration
 - Multiple file operations
 
+**Research Question:**
+"Conduct a content-based forensic analysis focusing on:
+Research topic identification:
+   - Main subject areas
+   - Sub-topics and related fields
+   - Search term patterns and frequencies
+Pattern analysis:
+   - Topic clustering
+   - Evolution of research focus over time
+   - Correlations between searched topics
+Thesis topic determination:
+   - Primary research direction
+   - Supporting evidence from search patterns
+   - Academic resource utilization
+
+Map the findings to establish the overall research context and thesis focus."
+"How do complex research behaviors involving web scraping, encrypted storage, and extensive file operations affect the forensic footprint compared to simpler research patterns, and what challenges does this present for forensic investigation methodologies?"
+
 The progression from Scenario 1 to 3 demonstrates increasing complexity in both user behavior simulation and forensic artifact generation. Each scenario can be used to test different aspects of digital forensics tools and methodologies.
 
 ## Running the Scenario
+
+Having covered the complete installation and configuration process, this section focuses on the practical implementation of scenarios. 
+It details both the execution procedures and explains how to effectively monitor the scenario while it runs.
 
 ### Execution
 1. Update the YAML file reference in `scenario_2.py` to match your configuration
@@ -458,6 +518,17 @@ The process generates two main artifacts for forensic analysis (usually in /var/
 - Can be analyzed using Wireshark
 
 ## Forensic Analysis Guide
+
+This section examines the analysis of artifacts generated during scenario execution. It covers three main aspects:
+
+File Format Conversion:
+   - Converting from .raw image format to .e01 format
+Digital Forensics Analysis:
+   - Detailed examination of the forensic image using Axiom
+Network Analysis:
+   - Investigation of captured network traffic using Wireshark
+
+Each subsection provides step-by-step guidance for working with and analyzing these forensic artifacts.
 
 ### Converting Raw Images
 1. Download FTK-Imager from [Exterro's official website](https://www.exterro.com/)
@@ -561,6 +632,6 @@ For additional information about WSL installations, refer to the official docume
 
 ## Credits
 
-Initial installation based on the guide written by Dennis W0lf: https://gitlab.com/DW0lf/fortrace/-/tree/main
-Ubuntu Installation based on: https://documentation.ubuntu.com/wsl/en/latest/howto/install-ubuntu-wsl2/
-Configuration of Virt Manager based on his guide found here: https://gitlab.com/DW0lf/fortrace/-/blob/main/examples/Windows/ForTrace_Workshop/VeraCrypt/readme.md#configuration-of-windows-and-installation-of-necessary-programs
+Initial installation based on the guide written by Dennis W0lf: [Dennis W0lf basic installation guide] https://gitlab.com/DW0lf/fortrace/-/tree/main
+Ubuntu Installation based on: [Ubuntu Installation] https://documentation.ubuntu.com/wsl/en/latest/howto/install-ubuntu-wsl2/
+Configuration of Virt Manager based on his guide found here: [Dennis W0lf VM installation guide] https://gitlab.com/DW0lf/fortrace/-/blob/main/examples/Windows/ForTrace_Workshop/VeraCrypt/readme.md#configuration-of-windows-and-installation-of-necessary-programs
